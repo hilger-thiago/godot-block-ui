@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2yk18d70yasl"]
+
+[ext_resource type="Script" path="res://grid_ui.gd" id="1_g0wjh"]
+[ext_resource type="PackedScene" uid="uid://cjtg3d3rgnu8l" path="res://block_ui.tscn" id="2_2i03u"]
+
+[node name="GridUI" type="NinePatchRect" node_paths=PackedStringArray("selection_ninepatch")]
+custom_minimum_size = Vector2(52, 52)
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource("1_g0wjh")
+margin = 10
+spacing = 10
+blocksize = Vector2i(32, 32)
+selection_ninepatch = NodePath("Selection")
+
+[node name="Selection" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 42.0
+offset_bottom = 42.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="BlockUI" parent="." instance=ExtResource("2_2i03u")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 42.0
+offset_bottom = 42.0
